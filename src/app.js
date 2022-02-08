@@ -8,6 +8,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //API routes register
-app.use(routes);
+app.use('/api/v1', routes);
 
 module.exports = app;
