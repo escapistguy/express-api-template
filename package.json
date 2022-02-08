@@ -1,0 +1,30 @@
+{
+	"name": "express-todo-app",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"start": "node src/server.js",
+		"start:dev": "NODE_ENV=development nodemon src/server",
+		"start:prod": "echo \"TODO PROD START\" && exit 1",
+		"build": "echo \"TODO BUILD\" && exit 1",
+		"lint": "eslint \"src/**/*.js\" --fix",
+		"prettier": "prettier --write ./**/*.{json,js}",
+		"prettier:check": "prettier --check ./**/*.{json,js}",
+		"prepare": "husky install",
+		"precommit": "lint-staged && npm run lint && npm run test",
+		"prepush": "npm run lint && npm run prettier:check && npm run test"
+	},
+	"dependencies": {
+		"express": "^4.17.2"
+	},
+	"devDependencies": {
+		"eslint": "^8.8.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"husky": "^7.0.4",
+		"lint-staged": "^12.3.3",
+		"nodemon": "^2.0.15",
+		"prettier": "2.5.1"
+	}
+}
